@@ -5,6 +5,7 @@ export {
   AccordionTrigger,
 } from './accordion';
 export { Alert, AlertDescription, AlertTitle } from './alert';
+export { AnimatedGridPattern } from './animated-grid-pattern';
 export { AspectRatio } from './aspect-ratio';
 export { Badge, badgeVariants } from './badge';
 export { Button, buttonVariants } from './button';
