@@ -22,7 +22,6 @@ export {
   DialogTrigger,
 } from './dialog';
 export { DropdownMenu } from './dropdown-menu';
-export { HeroSection } from './hero-section';
 export { Icons } from './icons';
 export { Input } from './input';
 export { Label } from './label';

@@ -3,10 +3,9 @@
 import Link from 'next/link';
 
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
+import { siteConfig } from '@/shared/config';
 import { cn } from '@/shared/lib/tw-utils';
-
-import { siteConfig } from '../config';
-import { Button } from './button';
+import { Button } from '@/shared/ui';
 
 interface HeroSectionProps {
   className?: string;
