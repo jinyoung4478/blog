@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { siteConfig } from '@/shared/config';
 import { cn } from '@/shared/lib/tw-utils';
 import { Button } from '@/shared/ui/button';
@@ -54,11 +56,13 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
 
         {/* 액션 버튼들 */}
         <div className='pointer-events-auto flex w-fit flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4'>
-          <Button
-            size='lg'
-            className='w-full bg-gradient-to-r from-blue-600 to-teal-600 px-6 py-2.5 text-base text-white hover:from-blue-700 hover:to-teal-700 sm:w-auto sm:px-8 sm:py-3 sm:text-lg'>
-            포스트 보기
-          </Button>
+          <Link href='/posts'>
+            <Button
+              size='lg'
+              className='w-full bg-gradient-to-r from-blue-600 to-teal-600 px-6 py-2.5 text-base text-white hover:from-blue-700 hover:to-teal-700 sm:w-auto sm:px-8 sm:py-3 sm:text-lg'>
+              포스트 보기
+            </Button>
+          </Link>
           {/* <Button
             variant='outline'
             size='lg'
