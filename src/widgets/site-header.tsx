@@ -5,6 +5,12 @@
 // import { buttonVariants, Icons } from '@/shared/ui';
 
 // import { CommandMenu } from './command-menu';
+import Link from 'next/link';
+
+import { siteConfig } from '@/shared/config';
+import { cn } from '@/shared/lib';
+import { buttonVariants, Icons } from '@/shared/ui';
+
 import { MainNav } from './main-nav';
 import { MobileNav } from './mobile-nav';
 import { ModeToggle } from './mode-toggle';
@@ -20,7 +26,7 @@ const SiteHeader = () => {
             <CommandMenu />
           </div> */}
           <nav className='flex items-center'>
-            {/* <Link href={siteConfig.links.github} target='_blank' rel='noreferrer'>
+            <Link href={siteConfig.links.github} target='_blank' rel='noreferrer'>
               <div
                 className={cn(
                   buttonVariants({
@@ -31,7 +37,7 @@ const SiteHeader = () => {
                 <Icons.gitHub className='h-4 w-4' />
                 <span className='sr-only'>GitHub</span>
               </div>
-            </Link> */}
+            </Link>
             <ModeToggle />
           </nav>
         </div>

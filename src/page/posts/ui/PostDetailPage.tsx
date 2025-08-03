@@ -2,6 +2,7 @@ import { ChevronRightIcon } from '@radix-ui/react-icons';
 import Balancer from 'react-wrap-balancer';
 
 import { Post } from '@/contentlayer/generated';
+import { siteConfig } from '@/shared/config';
 import { cn } from '@/shared/lib';
 import { getTableOfContents } from '@/shared/lib/toc';
 import { ScrollArea } from '@/shared/ui';
@@ -16,17 +17,13 @@ const PostDetailPage = async ({ post }: { post: Post }) => {
 
   return (
     <div className='container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10'>
-      {/* <aside className='fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block'>
-      <ScrollArea className='h-full py-6 pr-6 lg:py-8'>
-        <PostsSidebarNav items={docsConfig.sidebarNav} />
-      </ScrollArea>
-    </aside> */}
       <aside className='fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block'>
         <ScrollArea className='h-full py-6 pr-6 lg:py-8'>
           <div>
             <h3 className='select-none uppercase'>contact</h3>
-            <p>aiqextory@gmail.com</p>
+            <p>{siteConfig.contact.email}</p>
           </div>
+          {/* <PostsSidebarNav items={docsConfig.sidebarNav} /> */}
         </ScrollArea>
       </aside>
 

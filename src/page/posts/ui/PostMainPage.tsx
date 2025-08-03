@@ -1,4 +1,5 @@
 import { PostList } from '@/feature/posts';
+import { siteConfig } from '@/shared/config';
 import { ScrollArea } from '@/shared/ui';
 
 const PostMainPage = () => {
@@ -8,7 +9,7 @@ const PostMainPage = () => {
         <ScrollArea className='h-full py-6 pr-6 lg:py-8'>
           <div>
             <h3 className='select-none uppercase'>contact</h3>
-            <p>aiqextory@gmail.com</p>
+            <p>{siteConfig.contact.email}</p>
           </div>
         </ScrollArea>
       </aside>
