@@ -22,6 +22,11 @@ const getPostFromParams = async ({ params }: PostPageProps) => {
     return null;
   }
 
+  // 비공개 게시글인 경우 null 반환
+  if (post.published === false) {
+    return null;
+  }
+
   return post;
 };
 
@@ -68,9 +73,11 @@ export const generateMetadata = async ({ params }: PostPageProps): Promise<Metad
 };
 
 export const generateStaticParams = async (): Promise<PostPageProps['params'][]> => {
-  return allPosts.map((post) => ({
-    slug: post.slugAsParams.split('/'),
-  }));
+  return allPosts
+    .filter((post) => post.published !== false)
+    .map((post) => ({
+      slug: post.slugAsParams.split('/'),
+    }));
 };
 
 const Page = async ({ params }: PostPageProps) => {

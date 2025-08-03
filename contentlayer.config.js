@@ -31,6 +31,7 @@ export const Post = defineDocumentType(() => ({
       required: true,
     },
     tags: { type: 'list', of: { type: 'string' }, default: [] },
+    published: { type: 'boolean', default: true },
   },
   computedFields,
 }));

@@ -10,7 +10,7 @@ interface StyleWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
 export function StyleWrapper({ styleName, children }: StyleWrapperProps) {
   const [config] = useConfig();
 
-  if (!styleName ?? config.style === styleName) {
+  if (!styleName || config.style === styleName) {
     return <>{children}</>;
   }
 

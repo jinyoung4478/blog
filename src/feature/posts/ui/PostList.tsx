@@ -6,9 +6,11 @@ import Balancer from 'react-wrap-balancer';
 import { allPosts, Post } from '@/contentlayer/generated';
 
 export const PostList = () => {
-  const posts: Post[] = allPosts.sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date));
-  });
+  const posts: Post[] = allPosts
+    .filter((post) => post.published !== false)
+    .sort((a, b) => {
+      return compareDesc(new Date(a.date), new Date(b.date));
+    });
   const displayPosts = posts;
 
   return (
