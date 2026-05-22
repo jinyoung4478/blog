@@ -19,17 +19,7 @@ shadcn/ui를 사용하면서 크고 작은 이슈를들 겪고 있는데, 그 �
 ## DropdownMenu 트리거링 문제
 
 shadcn/ui를 사용한 프로젝트 중 드롭다운 메뉴가 필요한 상황이 생겼다.
-아래와 같이 댓글 영역을 클릭 시 드롭다운 메뉴가 열리고 댓글 수정/삭제 동작을 가능하도록 하는 것이다.
-
-<AspectRatio ratio={16 / 9} className='my-4 overflow-hidden'>
-  <Image
-    src='https://bucket-zifafi.s3.ap-northeast-2.amazonaws.com/posts/dropdownmenu-01.png'
-    alt='Image'
-    width='400'
-    height='400'
-    className='mx-auto rounded-md object-cover'
-  />
-</AspectRatio>
+댓글 영역을 클릭하면 드롭다운 메뉴가 열리고, 메뉴 안에서 댓글 수정/삭제 동작을 할 수 있도록 만들고자 했다.
 
 명령어 `npx shadcn-ui@latest add dropdown-menu`를 통해 드롭다운 컴포넌트를 생성하고 합성 컴포넌트 방식으로 쉽게 만들 수 있었다.
 `DropdownMenu` 컴포넌트 내부에 메뉴의 열림 상태와 핸들러가 내장되어 있어서 사용자는 보여지는 UI만 신경쓰면 된다.

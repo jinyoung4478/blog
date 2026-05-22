@@ -30,15 +30,7 @@ Git의 도구들 중에 [서브모듈](https://git-scm.com/book/ko/v2/Git-%EB%8F
 
 ### 1. 독립 저장소 생성하기
 
-<Image
-  src='https://bucket-zifafi.s3.ap-northeast-2.amazonaws.com/posts/submodule_private.png'
-  alt='Image'
-  width='300'
-  height='150'
-  className='mx-auto rounded-md object-cover'
-/>
-
-위와 같이 새로운 repository를 생성하고 private 설정을 해주었다.
+GitHub에서 새로운 repository를 생성하고 private 설정을 해주었다.
 
 ### 2. 작업 환경에서 서브모듈 추가하기
 
@@ -66,15 +58,7 @@ git push origin main
 ```
 
 로컬 작업 환경에서 서브모듈 추가했다.
-그리고 해당 변경 사항을 원격 저장소로 `push`를 한 뒤 깃헙 저장소에서 확인하면 아래와 같이 서브모듈이 반영된 것을 볼 수 있다.
-
-<Image
-  src='https://bucket-zifafi.s3.ap-northeast-2.amazonaws.com/posts/submodule_contents.png'
-  alt='Image'
-  width='300'
-  height='150'
-  className='mx-auto rounded-md object-cover'
-/>
+그리고 해당 변경 사항을 원격 저장소로 `push`한 뒤 GitHub 저장소에서 확인하면, contents 폴더가 서브모듈로 분리되어 별도 커밋 해시를 가리키는 형태로 표시되는 것을 볼 수 있다.
 
 ### 4. 배포 환경에서 서브모듈 반영하기
 

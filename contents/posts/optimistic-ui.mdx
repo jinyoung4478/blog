@@ -36,14 +36,6 @@ tags:
 인스타그램의 좋아요 버튼과 똑같은 동작이다.
 사용자가 하트를 누르면 숫자가 1만큼 오르며 하트 내부에 빨간색으로 색상이 표시된다.
 
-<Image
-  src='https://bucket-zifafi.s3.ap-northeast-2.amazonaws.com/posts/optimistic_01.png'
-  alt='Image'
-  width='300'
-  height='150'
-  className='mx-auto my-6 rounded-md object-cover'
-/>
-
 기존에는 `onClick` 이벤트 핸들러로 좋아요 상태를 토글하는 API 요청을 곧바로 보냈고, 요청 성공 시 또 다시 해당 게시물 쿼리 데이터를 `refetch`하도록 되어있었다.
 하트 표시가 바뀌는데 대략 1~2초 정도의 시간이 소요되었고, 네트워크 요청이 `fetching` 중일때 또 하트를 클릭하면 해당 트리거링을 무시했다.
 따라서 사용자가 인스타그램처럼 좋아요를 빠르게 여러번 누를 수 없었고, 인터랙션이 화면에 반영되기까지 1초 내외의 시간을 기다려야했다.
@@ -295,15 +287,7 @@ onSettled 시점에는 해당 쿼리를 무효화(invalidateQueries)하여 다�
 
 ### 최종 코드
 
-<Image
-  src='https://bucket-zifafi.s3.ap-northeast-2.amazonaws.com/posts/optimistic_03.gif'
-  alt='Image'
-  width='800'
-  height='150'
-  className='mx-auto my-6 rounded-md object-cover'
-/>
-
-이제 위와같이 빠른 속도로 좋아요가 화면에 반영된다.
+이제 빠른 속도로 좋아요가 화면에 반영된다.
 또한 디바운스가 적용되어서 불필요한 네트워크 요청도 줄일 수 있었다.
 
 <Accordion type="multiple">
@@ -410,15 +394,7 @@ const PostComponent = () => {
 
 ## 한계점과 결론
 
-<Image
-  src='https://bucket-zifafi.s3.ap-northeast-2.amazonaws.com/posts/optimistic_02.gif'
-  alt='Image'
-  width='300'
-  height='150'
-  className='mx-auto my-6 rounded-md object-cover'
-/>
-
-이처럼 사용자 입장에서 즉각적인 UI 피드백을 제공할 수 있게 되었다.
+이렇게 사용자 입장에서 즉각적인 UI 피드백을 제공할 수 있게 되었다.
 간단한 기법을 적용해서 사용자의 이탈률을 줄일 수 있는게 프론트엔드 개발의 묘미가 아닐까.
 
 도허티 임계값 기준인 0.4초를 고려하여 디바운스 시간값을 0.3초로 설정했는데, 지금 시점에는 0.1초도 괜찮을것 같다고 생각한다.
