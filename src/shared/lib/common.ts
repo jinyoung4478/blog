@@ -1,3 +1,4 @@
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.qextory.com';
+  return new URL(path, baseUrl).toString();
 }

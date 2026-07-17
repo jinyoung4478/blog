@@ -91,7 +91,7 @@ export const viewport: Viewport = {
   ],
 };
 
-const GTM_ID = process.env.GTM_ID as string;
+const GTM_ID = process.env.GTM_ID;
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -99,7 +99,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
       <Head>
         <link rel='icon' href='/logo.svg' />
       </Head>
-      <GoogleTagManager gtmId={GTM_ID} />
+      {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
