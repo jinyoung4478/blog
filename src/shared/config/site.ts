@@ -4,7 +4,7 @@ export const siteConfig = {
   author: '김진영',
   url: 'https://www.qextory.com',
   ogImage: '/images/qextory-banner.png',
-  description: 'Dive into a realm of boundless creativity with Qextory!',
+  description: 'qextory의 포스트와 프로젝트.',
   links: {
     github: 'https://github.com/jinyoung4478',
   },
