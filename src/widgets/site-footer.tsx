@@ -11,7 +11,7 @@ const SiteFooter = () => {
             target='_blank'
             rel='noreferrer'
             className='font-medium underline underline-offset-4'>
-            qextory
+            @jinyoung4478
           </a>
           . All Rights Reserved.
         </p>
