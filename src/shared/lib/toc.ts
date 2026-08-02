@@ -11,9 +11,10 @@ export type TocItem = {
 
 export type Toc = TocItem[];
 
-const slugger = new GithubSlugger();
-
 const getToc = () => (tree: any, file: any) => {
+  // rehype-slug은 문서마다 새 slugger를 쓴다. 여기서 인스턴스를 재사용하면
+  // 같은 제목을 두 번째로 만날 때 `-1`이 붙어서 실제 heading id와 어긋난다.
+  const slugger = new GithubSlugger();
   const toc: Toc = [];
   visit(tree, 'heading', (node: any) => {
     const textContent = toString(node);
