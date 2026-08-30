@@ -1,0 +1,3 @@
+[submodule "src/app/resume"]
+	path = src/app/resume
+	url = https://github.com/jinyoung4478/resume.git
