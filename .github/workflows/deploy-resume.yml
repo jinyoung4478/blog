@@ -1,4 +1,4 @@
-name: Deploy resume to Vercel
+name: Deploy website to Vercel
 
 on:
   push:
@@ -28,18 +28,18 @@ jobs:
         with:
           submodules: false
 
-      - name: Resolve pinned resume revision
-        id: resume-ref
+      - name: Resolve pinned content revision
+        id: content-ref
         shell: bash
-        run: echo "sha=$(git rev-parse HEAD:src/app/resume)" >> "$GITHUB_OUTPUT"
+        run: echo "sha=$(git rev-parse HEAD:contents)" >> "$GITHUB_OUTPUT"
 
-      - name: Check out private resume
+      - name: Check out private content
         uses: actions/checkout@v4
         with:
-          repository: jinyoung4478/resume
-          ref: ${{ steps.resume-ref.outputs.sha }}
-          path: src/app/resume
-          ssh-key: ${{ secrets.RESUME_REPO_SSH_KEY }}
+          repository: jinyoung4478/content
+          ref: ${{ steps.content-ref.outputs.sha }}
+          path: contents
+          ssh-key: ${{ secrets.CONTENT_REPO_SSH_KEY }}
           persist-credentials: false
 
       - name: Set up pnpm
